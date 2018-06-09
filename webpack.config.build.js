@@ -13,8 +13,8 @@ module.exports = merge(webpackConfig, {
     output: {
         path: path.join(__dirname, "dist"),
         publicPath: "/",
-        filename: "assets/[name].[hash].js",
-        chunkFilename: "assets/[name].[chunkhash].js"
+        filename: "assets/js/[name].[hash].js",
+        chunkFilename: "assets/js/[name].[chunkhash].js"
     },
 
     optimization: {
@@ -62,8 +62,8 @@ module.exports = merge(webpackConfig, {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new MiniCssExtractPlugin({
-            filename: 'assets/app.[name].css',
-            chunkFilename: 'assets/app.[contenthash:12].css'
+            filename: 'assets/css/app.[name].css',
+            chunkFilename: 'assets/css/app.[contenthash:12].css'
         }),
     ]
 

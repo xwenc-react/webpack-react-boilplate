@@ -10,7 +10,6 @@
     "build": "webpack -p --progress --mode production --config webpack.config.build.js"
   },
   "devDependencies": {
-    "autoprefixer": "^8.6.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
