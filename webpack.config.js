@@ -63,51 +63,51 @@ module.exports = {
                 ]
             },
             // IMAGES
-            // {
-            //     test: /\.(jpe?g|png|gif|svg)$/i,
-            //     use: [
-            //       "file-loader?hash=sha512&digest=hex&name=[hash].[ext]",
-            //       {
-            //         loader: "image-webpack-loader",
-            //         options: {
-            //           optipng: {
-            //             optimizationLevel: 7
-            //           },
-            //           gifsicle: {
-            //             interlaced: false
-            //           },
-            //           pngquant: {
-            //             quality: '65-90',
-            //             speed: 4,
-            //           },
-            //           mozjpeg: {
-            //             quality: 65,
-            //             progressive: true
-            //           }
-            //         }
-            //       }
-            //     ]
-            // },
             {
-                test: /\.(png|svg|jpg|gif|eot|ttf|woff|woff2)$/,
-                use: {
-                  loader: "url-loader",
-                  options: {
-                    limit: 2048000,
-                    name: "name=[hash:8].[name].[ext]"
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: [
+                  "file-loader?hash=sha512&digest=hex&name=[hash].[ext]",
+                  {
+                    loader: "image-webpack-loader",
+                    options: {
+                      optipng: {
+                        optimizationLevel: 7
+                      },
+                      gifsicle: {
+                        interlaced: false
+                      },
+                      pngquant: {
+                        quality: '65-90',
+                        speed: 4,
+                      },
+                      mozjpeg: {
+                        quality: 65,
+                        progressive: true
+                      }
+                    }
                   }
-                }
+                ]
             },
+            // {
+            //     test: /\.(png|svg|jpg|gif|eot|ttf|woff|woff2)$/,
+            //     use: {
+            //       loader: "url-loader",
+            //       options: {
+            //         limit: 2048000,
+            //         name: "name=[hash:8].[name].[ext]"
+            //       }
+            //     }
+            // },
 
             // FONTS
-            // {
-            //     test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            //     use: "url-loader?limit=10000&mimetype=application/font-woff"
-            // },
-            // {
-            //     test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            //     use: "file-loader"
-            // }
+            {
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                use: "url-loader?limit=10000&mimetype=application/font-woff"
+            },
+            {
+                test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                use: "file-loader"
+            }
         ]
     }
 };
