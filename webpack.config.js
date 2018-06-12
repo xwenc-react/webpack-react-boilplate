@@ -20,7 +20,7 @@ const vendor = ['react','react-dom','react-router'];
 module.exports = {
     entry: {
         vendor,
-        app: path.join(dirApp, 'main')
+        app: ['react-hot-loader/patch', path.join(dirApp, 'main')]
     },
     resolve: {
         modules: [
